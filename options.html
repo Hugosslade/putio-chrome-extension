@@ -1,0 +1,99 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<title>Options</title>
+	<link rel="shortcut icon" href="icon-19.png">
+<style>
+
+body, div, a, p, input,img, h1 {
+	margin: 0; padding: 0;
+	font-family: 'Myriad Pro',Myriad,Helvetica,sans-serif;
+}
+
+body {
+	background: #eee;
+}
+
+#wrp {
+	width: 500px;
+	margin: 10px auto;
+}
+
+a {
+	text-decoration: none;
+	color: #22f;
+}
+	
+img {
+	float: left;
+}
+	
+h1 {
+	float: left;
+	margin: 50px 10px;
+	clear: right;
+}
+
+#inputs {
+	width :500px;
+	float: left;
+}
+
+#info-click {
+}
+	
+input {
+	width: 400px;
+	padding: 5px;
+	font-size: 24px;
+	margin : 15px auto 0px;
+	display: block;
+}
+
+.saved {
+	background-color: gold !important;
+}
+	
+	
+</style>
+</head>
+<body>
+	<div id="wrp">
+		<img src="icon-128.png"/><h1><a href="https://put.io/transfers">Transfer</a> Extension</h1>
+		<div id="inputs">
+			<p id="info-click">Don't know your info? <a href="https://put.io/account/settings">Click here</a></p>
+			<input type="text" id="api_key" placeholder="API Key" value="API Key">
+			<input type="text" id="api_secret" placeholder="API Secret" value="API Secret">
+		</div>
+	</div>
+<script>
+
+	var k = document.getElementById("api_key"),
+		s = document.getElementById("api_secret");
+		
+	k.value=localStorage.getItem('api_key');
+	s.value=localStorage.getItem('api_secret');
+		
+	k.addEventListener("change",saveKey,false);
+	s.addEventListener("change",saveSecret,false);
+	
+	function saveKey(e){
+		console.log('k',e.target.value)
+		k.className="saved";
+		setTimeout(function(){
+			k.className="";
+		},1000)
+		localStorage.setItem('api_key',e.target.value);
+	}
+	function saveSecret(e){
+		console.log('s',e.target.value)
+		s.className="saved";
+		setTimeout(function(){
+			s.className="";
+		},1000)
+		localStorage.setItem('api_secret',e.target.value);
+	}
+
+</script>
+</body>
+</html>

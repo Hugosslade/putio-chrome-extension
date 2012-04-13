@@ -1,0 +1,22 @@
+{
+  "name": "Put.io Transfer",
+  "description": "Add transfer to Put.io",
+  "version": "0.6",
+  "browser_action": {
+    "default_icon": "icon-19.png"
+  },
+  "permissions": [
+	"contextMenus",
+	"tabs",
+	"notifications",
+	"http://api.put.io/",
+	"https://api.put.io/"
+	],
+  "background_page": "background.html",
+  "options_page": "options.html",
+  "icons" : {
+    "19" : "icon-19.png",
+    "48" : "icon-48.png",
+    "128": "icon-128.png"
+  }
+}

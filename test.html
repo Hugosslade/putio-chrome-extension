@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head> <script src="jquery.js"></script> 
+<title>Put.io Trans</title>
+	<link rel="shortcut icon" href="icon-19.png">
+<style>
+
+body, div, a, p, input,img, h1 {
+	margin: 0; padding: 0;
+	font-family: 'Myriad Pro',Myriad,Helvetica,sans-serif;
+}
+
+body {
+	background: #fff;
+}
+
+#img {
+	float: left;
+	margin: 10px;
+}
+
+#hdr {
+	float: left;
+}
+
+#lnk {
+	float: left;
+	display: block;
+	padding: 1px 2px 0px;
+	text-decoration: none;
+}
+
+#lnk:hover {
+	background: #ccc;
+}
+
+#wrp {
+	width: 200px;
+	background: red;
+}
+	
+</style>
+</head>
+<body>
+	<div id="wrp">
+		<img id="img" src="icon-19.png"></img>
+		<h1 id="hdr">Example</h1>
+		<a href="#"id="lnk" target="_blank">Lorem Dorum</a>
+	</div>
+<script>
+
+	var	s = document.location.search.substr(1),
+		i,d={},e;
+	
+	if(s!=""){
+		console.log(s);
+		s=s.split("&");
+		for(i=0;i<s.length;i++){
+			s[i]=s[i].split("=");
+			d[s[i][0]]=unescape(s[i][1]);
+		}
+		console.log(d)
+		
+		$("#hdr").html(d.t);		
+		$("#img").attr('src',d.i);		
+		$("#lnk").attr('href',d.l).html(d.n);
+		
+		/*
+		for(i=0;i<s.length;i++){
+			d=s[i].split("=");
+			e=document.getElementById(d[0]);
+			console.log(d[1])
+			console.log(decodeURI(d[1]))
+			e.innerHTML=decodeURI(d[1]);
+		}*/
+	}
+
+</script>
+</body>
+</html>
